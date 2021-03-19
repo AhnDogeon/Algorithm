@@ -1,23 +1,21 @@
-import heapq
+
 
 def solution(jobs):
+    jobs = sorted(jobs, key=lambda x:x[1])
     print(jobs)
-    heap = []
-
-    for i, j in jobs:
-        heapq.heappush(heap, [j, i])
-
+    result = len(jobs)
     time = 0
     answer = []
-    while heap:
-        minH = heapq.heappop(heap)
-        if time >= minH[1]:
-            time += minH[0]
-            answer.append(time - minH[1])
+    while len(jobs) != 0:
+        for job in jobs:
+            if time >= job[0]:
+                time += job[1]
+                answer.append(time - job[0])
+                jobs.pop(jobs.index(job))
+                break
         else:
-            heapq.heappush(heap, minH)
             time += 1
-    print(answer)
-    return int(sum(answer) / len(jobs))
+
+    return int(sum(answer) / result)
 
 print(solution([[0, 10], [4, 10], [5, 11], [15, 2]]))
