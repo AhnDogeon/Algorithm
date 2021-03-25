@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b6f994ec-54a3-4eec-9379-1464ae5e38b2" name="Default Changelist" comment="" />
+    <list default="true" id="b6f994ec-54a3-4eec-9379-1464ae5e38b2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Programmers/kakao_크레인인형뽑기.py" beforeDir="false" afterPath="$PROJECT_DIR$/Programmers/kakao_크레인인형뽑기.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +30,11 @@
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Programmers/kakao_크레인인형뽑기.py">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="17" column="17" selection-end-line="17" selection-end-column="17" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -296,12 +302,12 @@
       <workItem from="1609163680090" duration="55000" />
       <workItem from="1616159596772" duration="9877000" />
       <workItem from="1616304756816" duration="5404000" />
-      <workItem from="1616684213355" duration="95000" />
+      <workItem from="1616684213355" duration="108000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15431000" />
+    <option name="totallyTimeSpent" value="15444000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -427,7 +433,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Programmers/kakao_크레인인형뽑기.py">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" column="17" selection-end-line="17" selection-end-column="17" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
