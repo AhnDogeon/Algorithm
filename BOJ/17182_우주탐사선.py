@@ -8,7 +8,7 @@ for _ in range(N):
     arr = list(map(int, input().split()))
     dist.append(arr)
 
-
+# 플로이드 워셜
 for k in range(N):
     for i in range(N):
         for j in range(N):
@@ -30,6 +30,8 @@ def DFS(arr, start, depth, time):
             arr[i] = True
             DFS(arr, i, depth + dist[start][i], time + 1)
             arr[i] = False
+
+# cost
 DFS(visit, K, 0, 0)
 
 print(answer)
