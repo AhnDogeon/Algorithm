@@ -1,4 +1,4 @@
-a = [1,5,7]
+a = [1,2,3]
 
 N = 3
 
@@ -18,7 +18,7 @@ def per(k): # 순열
 
 visit = [False] * N
 t = [0] * R
-# per(0)
+per(0)
 
 def junbok(k): # 중복 순열
     if k == R:
@@ -27,7 +27,7 @@ def junbok(k): # 중복 순열
         for i in range(N):
             t[k] = a[i]
             junbok(k+1)
-print('==============================')
+
 visit = [False] * N
 t = [0] * R
 # junbok(0)
