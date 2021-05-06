@@ -12,7 +12,8 @@ diff = [[0, 0], [0, -1], [-1, -1],[-1, 0],[-1, 1],[0, 1],[1, 1],[1, 0],[1, -1]]
 
 def Move(dir, dis):
     # dir 방향, dis 거리
-    for _ in range(len(cloud)):
+    len_cloud = len(cloud)
+    for _ in range(len_cloud):
         x = cloud.pop(0)
         dx, dy = x[0] + (diff[dir][0] * dis), x[1] + (diff[dir][1] * dis)
         if dx < 0:
@@ -32,6 +33,7 @@ def Copy(cloud):
     # diff의 2, 4, 6, 8번만 확인
     copy_diff = [2, 4, 6, 8]
     for i in cloud:
+        board[i[0]][i[1]] += 1
         cnt = 0
         for j in copy_diff:
             dx, dy = i[0] + diff[j][0], i[1] + diff[j][1]
@@ -44,7 +46,7 @@ def Make_cloud(cloud):
     new_cloud = []
     for i in range(N):
         for j in range(N):
-            if board[i][j] >= 2 and [i, j] not in cloud:
+            if [i, j] not in cloud and board[i][j] >= 2:
                 board[i][j] -= 2
                 new_cloud.append([i, j])
 
@@ -56,16 +58,11 @@ for _ in range(M):
     d, s = map(int, input().split())
     #1번 조건
     Move(d, s)
-    # 2번 조건
-    for i in cloud:
-        board[i[0]][i[1]] += 1
-    #3번 조건 not
     #4번 조건 대각선 물복사
     Copy(cloud)
     cloud = Make_cloud(cloud)
 
 total = 0
 for i in range(N):
-    for j in range(N):
-        total += board[i][j]
+    total += sum(board[i])
 print(total)
