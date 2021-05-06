@@ -15,14 +15,16 @@ def Move(dir, dis):
     for _ in range(len(cloud)):
         x = cloud.pop(0)
         dx, dy = x[0] + (diff[dir][0] * dis), x[1] + (diff[dir][1] * dis)
-        while dx < 0:
-            dx = N + dx
-        while dx >= N:
-            dx = dx - N
-        while dy < 0:
-            dy = N + dy
-        while dy >= N:
-            dy = dy - N
+        if dx < 0:
+            temp = abs(dx) % N
+            dx = N - temp
+        if dx >= N:
+            dx = dx % N
+        if dy < 0:
+            temp = abs(dy) % N
+            dy = N - temp
+        if dy >= N:
+            dy = dy % N
 
         cloud.append([dx, dy])
 
