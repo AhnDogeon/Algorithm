@@ -1,12 +1,15 @@
 import sys
 sys.stdin = open('21610_마법사 상어와 비바라기.txt', 'r')
-
+from copy import deepcopy
 N, M = map(int, input().split())
 
 board = []
+cloud_board = []
 for _ in range(N):
-    board.append(list(map(int, input().split())))
-
+    a = list(map(int, input().split()))
+    board.append(a)
+    cloud_board.append([False] * len(a))
+copy_cloud_board = deepcopy(cloud_board)
 
 diff = [[0, 0], [0, -1], [-1, -1],[-1, 0],[-1, 1],[0, 1],[1, 1],[1, 0],[1, -1]]
 
@@ -26,7 +29,7 @@ def Move(dir, dis):
             dy = N - temp
         if dy >= N:
             dy = dy % N
-
+        cloud_board[dx][dy] = True
         cloud.append([dx, dy])
 
 def Copy(cloud):
@@ -43,19 +46,22 @@ def Copy(cloud):
         board[i[0]][i[1]] += cnt
 
 def Make_cloud(cloud):
+    global cloud_board
     new_cloud = []
     for i in range(N):
         for j in range(N):
-            if [i, j] not in cloud and board[i][j] >= 2:
+            if cloud_board[i][j] != True and board[i][j] >= 2:
                 board[i][j] -= 2
                 new_cloud.append([i, j])
 
     return new_cloud
 
 
+
 cloud = [[N - 1, 0],[N - 1, 1],[N -2 , 0],[N - 2, 1]] # 구름 시작 위치
 for _ in range(M):
     d, s = map(int, input().split())
+    cloud_board = copy_cloud_board
     #1번 조건
     Move(d, s)
     #4번 조건 대각선 물복사
