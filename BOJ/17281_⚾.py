@@ -1,15 +1,15 @@
-# import sys
-# sys.stdin = open('17281_⚾.txt', 'r')
-#
-# N = int(input())
-#
-# board = [list(map(int, input().split())) for _ in range(N)]
-#
-#
-from itertools import permutations
-per = permutations([1, 2, 3], 3)
-print(list(per))
+def bestSet(n, s):
+    import itertools
+    from functools import reduce
+    if n > s:
+        return [-1]
+    a = list(itertools.combinations_with_replacement(range(s + 1), n))
+    print(a)
+    combinations = [i for i in itertools.combinations_with_replacement(range(s+1), n) if sum(i) == s]
 
-from itertools import combinations
-com = combinations([1, 2, 3], 3)
-print(list(com))
+    multiply_li = [reduce(lambda x,y: x*y, combination) for combination in combinations]
+    index = multiply_li.index(max(multiply_li))
+    return sorted(list(combinations[index]))
+
+
+bestSet(3,5)
