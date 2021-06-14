@@ -87,3 +87,9 @@ FROM ANIMAL_INS
 WHERE NAME = "Lucy" OR NAME="Ella" OR NAME="Pickle" OR NAME="Rogan" OR NAME = "Sabrina" OR NAME = "Mitty"
 ```
 
+#### 동명 동물 수 찾기
+
+```mysql
+SELECT NAME, COUNT(*) AS COUNT FROM ANIMAL_INS GROUP BY NAME HAVING COUNT(NAME) >= 2
+```
+
