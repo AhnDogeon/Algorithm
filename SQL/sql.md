@@ -102,3 +102,4 @@ WHERE NAME LIKE '%EL%' AND ANIMAL_TYPE = 'DOG'
 ORDER BY NAME
 ```
 
+#### 입양 시각 구하기(1)
