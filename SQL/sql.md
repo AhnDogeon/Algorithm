@@ -140,3 +140,10 @@ FROM STUDENT)
 ```
 
 #### 어린동물 찾기
+
+```mysql
+SELECT ANIMAL_ID, NAME 
+FROM ANIMAL_INS 
+WHERE INTAKE_CONDITION!='Aged'
+```
+
