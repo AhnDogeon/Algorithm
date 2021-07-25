@@ -139,3 +139,4 @@ SELECT MIN(BIRTHDATE)
 FROM STUDENT)
 ```
 
+#### 어린동물 찾기
